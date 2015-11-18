@@ -1,15 +1,34 @@
 function Tabuleiro () {
 
+	var tabuleiro = {
+		"A" : linhasDaColuna("A"),
+		"B" : linhasDaColuna("B"),
+		"C" : linhasDaColuna("C"),
+		"D" : linhasDaColuna("D"),
+		"E" : linhasDaColuna("E"),
+		"F" : linhasDaColuna("F"),
+		"G" : linhasDaColuna("G"),
+		"H" : linhasDaColuna("H")
+	}
+
+	function linhasDaColuna(coluna) {
+		return [
+			new Casa(coluna, 1),
+			new Casa(coluna, 2),
+			new Casa(coluna, 3),
+			new Casa(coluna, 4),
+			new Casa(coluna, 5),
+			new Casa(coluna, 6),
+			new Casa(coluna, 7),
+			new Casa(coluna, 8)
+		];
+	}
+
 	this.casas = function () {
-		return {
-			"A" : [ "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca" ],
-			"B" : [ "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta" ],
-			"C" : [ "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca" ],
-			"D" : [ "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta" ],
-			"E" : [ "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca" ],
-			"F" : [ "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta" ],
-			"G" : [ "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca" ],
-			"H" : [ "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta" ]
-		}
+		return tabuleiro;
+	}
+
+	this.adicionaPeca = function (peca, linha, coluna) {
+		tabuleiro[linha][coluna-1].peca(peca);
 	}
 }

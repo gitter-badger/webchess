@@ -3,7 +3,9 @@ function Casa (coluna, linha) {
 	const BRANCA = "branca";
 	const PRETA = "preta";
 
-	var obtemCorPelaPosicao = function() {
+	var peca = null;
+
+	function obtemCorPelaPosicao () {
 		if (isLinhaPar()) {
 			if(isColunaPar())
 				return PRETA;
@@ -25,7 +27,13 @@ function Casa (coluna, linha) {
 		return coluna.charCodeAt(0) % 2 === 0;
 	}
 
-	this.toString = function(){
-		return "casa-" + obtemCorPelaPosicao();
+	this.toString = function () {
+		var stringCasa = "casa-" + obtemCorPelaPosicao();
+		var stringPeca = peca ? peca.toString() : null;
+		return [stringCasa, stringPeca].join(" ").trim();
+	}
+
+	this.peca = function (novaPeca) {
+		peca = novaPeca;
 	}
 }

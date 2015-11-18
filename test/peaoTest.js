@@ -9,4 +9,9 @@ describe("Peão Testes", function() {
 		var peao = new Peao("A", 2);
 		expect(peao.getPosicoesPossiveis()).toEqual(["A3"]);
 	});
+
+	it("toString peão branco na A2", function() {
+		var peao = new Peao("A", 2, "branco");
+		expect(peao.toString()).toEqual("peao-branco");
+	});
 });

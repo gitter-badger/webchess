@@ -13,11 +13,13 @@ describe("Tabuleiro Testes", function() {
 			"H" : [ "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta" ]
 		}
 
-		expect(tabuleiro.casas()).toEqual(tabuleiroEsperado);
+		expect(casasToString(tabuleiro.casas())).toEqual(tabuleiroEsperado);
 	});
 
-	it("casas de tabuleiro com um peao branco na A2", function() {
+	it("casas de tabuleiro com peão branco na A2", function() {
 		var tabuleiro = new Tabuleiro();
+		tabuleiro.adicionaPeca(new Peao("A", 2, "branco"), "A", 2);
+
 		var tabuleiroEsperado = {
 			"A" : [ "casa-preta", "casa-branca peao-branco", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca" ],
 			"B" : [ "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta" ],
@@ -29,7 +31,18 @@ describe("Tabuleiro Testes", function() {
 			"H" : [ "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta" ]
 		}
 
-		//expect(tabuleiro.casas()).toEqual(tabuleiroEsperado);
+		expect(casasToString(tabuleiro.casas())).toEqual(tabuleiroEsperado);
 	});
 
+	function casasToString(casas) {
+		var casasString = {};
+		for (var coluna in casas) {
+			var linhas = [];
+			for (var linha in casas[coluna])
+				
+				linhas.push(casas[coluna][linha].toString());
+			casasString[coluna] = linhas;
+		}
+		return casasString;
+	}
 });

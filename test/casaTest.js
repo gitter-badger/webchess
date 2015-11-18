@@ -22,10 +22,17 @@ describe("Casa Testes", function() {
 
 	it("move peao branco para casa A2", function() {
 		var casa = new Casa("A", 2);
-
 		var peaoBranco = new Peao("A", 2, "branco");
 
 		casa.peca(peaoBranco);
-		expect(casa.toString()).toEqual("casa-preta peao-branco");
+		expect(casa.toString()).toEqual("casa-branca peao-branco");
+	});
+
+	it("move peao preto para casa A2", function() {
+		var casa = new Casa("A", 2);
+		var peaoBranco = new Peao("A", 2, "preto");
+
+		casa.peca(peaoBranco);
+		expect(casa.toString()).toEqual("casa-branca peao-preto");
 	});	
 });
