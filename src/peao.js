@@ -1,6 +1,6 @@
-function Peao (coluna, linha) {
+function Peao (coluna, linha, cor) {
 
 	this.getPosicoesPossiveis = function() {
-		return [coluna, linha + 1];
+		return [coluna + (linha + 1)];
 	}
 }

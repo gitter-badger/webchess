@@ -1,11 +1,7 @@
 function Casa (coluna, linha) {
 
-	const BRANCA = "Branca";
-	const PRETA = "Preta";
-
-	this.cor = function() {
-		return obtemCorPelaPosicao();
-	}
+	const BRANCA = "branca";
+	const PRETA = "preta";
 
 	var obtemCorPelaPosicao = function() {
 		if (isLinhaPar()) {
@@ -13,7 +9,8 @@ function Casa (coluna, linha) {
 				return PRETA;
 			
 			return BRANCA;
-		} 
+		}
+		
 		if(isColunaPar())
 			return BRANCA;
 		
@@ -26,5 +23,9 @@ function Casa (coluna, linha) {
 
 	function isColunaPar(){
 		return coluna.charCodeAt(0) % 2 === 0;
+	}
+
+	this.toString = function(){
+		return "casa-" + obtemCorPelaPosicao();
 	}
 }
