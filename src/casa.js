@@ -5,7 +5,27 @@ function Casa (coluna, linha) {
 
 	var peca = null;
 
-	function obtemCorPelaPosicao () {
+	this.classe = function () {
+		var classe = [];
+		classe.push(classeCasa());
+		classe.push(classePeca());
+
+		return classe.join(" ").trim();
+	}
+
+	this.peca = function (novaPeca) {
+		peca = novaPeca;
+	}
+
+	function classeCasa() {
+		return "casa-" + corPelaPosicao();
+	}
+
+	function classePeca() {
+		return peca ? peca.classe() : "";
+	}
+
+	function corPelaPosicao() {
 		if (isLinhaPar()) {
 			if(isColunaPar())
 				return PRETA;
@@ -25,15 +45,5 @@ function Casa (coluna, linha) {
 
 	function isColunaPar(){
 		return coluna.charCodeAt(0) % 2 === 0;
-	}
-
-	this.toString = function () {
-		var stringCasa = "casa-" + obtemCorPelaPosicao();
-		var stringPeca = peca ? peca.toString() : null;
-		return [stringCasa, stringPeca].join(" ").trim();
-	}
-
-	this.peca = function (novaPeca) {
-		peca = novaPeca;
 	}
 }

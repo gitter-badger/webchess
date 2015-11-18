@@ -1,6 +1,6 @@
 describe("Tabuleiro Testes", function() {
 
-	it("casas de tabuleiro vazio", function() {
+	it("casas para tabuleiro vazio", function() {
 		var tabuleiro = new Tabuleiro();
 		var tabuleiroEsperado = {
 			"A" : [ "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca" ],
@@ -16,9 +16,9 @@ describe("Tabuleiro Testes", function() {
 		expect(casasToString(tabuleiro.casas())).toEqual(tabuleiroEsperado);
 	});
 
-	it("casas de tabuleiro com peão branco na A2", function() {
+	it("casas para tabuleiro com peão branco na casa A2", function() {
 		var tabuleiro = new Tabuleiro();
-		tabuleiro.adicionaPeca(new Peao("A", 2, "branco"), "A", 2);
+		tabuleiro.inserirPeca(new Peao("branco"), "A", 2);
 
 		var tabuleiroEsperado = {
 			"A" : [ "casa-preta", "casa-branca peao-branco", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca" ],
@@ -39,8 +39,8 @@ describe("Tabuleiro Testes", function() {
 		for (var coluna in casas) {
 			var linhas = [];
 			for (var linha in casas[coluna])
-				
-				linhas.push(casas[coluna][linha].toString());
+
+				linhas.push(casas[coluna][linha].classe());
 			casasString[coluna] = linhas;
 		}
 		return casasString;

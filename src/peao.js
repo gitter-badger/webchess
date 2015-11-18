@@ -1,10 +1,6 @@
-function Peao (coluna, linha, cor) {
+function Peao (cor) {
 
-	this.toString = function () {
+	this.classe = function () {
 		return "peao-" + cor;
-	}
-
-	this.getPosicoesPossiveis = function() {
-		return [coluna + (linha + 1)];
 	}
 }
