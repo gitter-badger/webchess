@@ -1,0 +1,20 @@
+.coluna {
+	clear: both;
+}
+
+.coluna div {
+	float: left;
+}
+
+.casa {
+	width: 100px;
+	height: 100px;
+}
+
+.preta {
+	background-color: #000000;
+}
+
+.branca {
+	background-color: #FFFFFF;
+}

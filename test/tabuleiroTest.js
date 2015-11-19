@@ -3,14 +3,14 @@ describe("Tabuleiro Testes", function() {
 	it("casas para tabuleiro vazio", function() {
 		var tabuleiro = new Tabuleiro();
 		var tabuleiroEsperado = {
-			"A" : [ "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca" ],
-			"B" : [ "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta" ],
-			"C" : [ "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca" ],
-			"D" : [ "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta" ],
-			"E" : [ "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca" ],
-			"F" : [ "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta" ],
-			"G" : [ "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca" ],
-			"H" : [ "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta" ]
+			"A" : [ "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca" ],
+			"B" : [ "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta" ],
+			"C" : [ "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca" ],
+			"D" : [ "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta" ],
+			"E" : [ "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca" ],
+			"F" : [ "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta" ],
+			"G" : [ "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca" ],
+			"H" : [ "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta" ]
 		}
 
 		expect(casasToString(tabuleiro.casas())).toEqual(tabuleiroEsperado);
@@ -21,14 +21,14 @@ describe("Tabuleiro Testes", function() {
 		tabuleiro.inserirPeca(new Peao("branco"), "A", 2);
 
 		var tabuleiroEsperado = {
-			"A" : [ "casa-preta", "casa-branca peao-branco", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca" ],
-			"B" : [ "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta" ],
-			"C" : [ "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca" ],
-			"D" : [ "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta" ],
-			"E" : [ "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca" ],
-			"F" : [ "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta" ],
-			"G" : [ "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca" ],
-			"H" : [ "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta", "casa-branca", "casa-preta" ]
+			"A" : [ "casa preta", "casa branca peao-branco", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca" ],
+			"B" : [ "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta" ],
+			"C" : [ "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca" ],
+			"D" : [ "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta" ],
+			"E" : [ "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca" ],
+			"F" : [ "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta" ],
+			"G" : [ "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca" ],
+			"H" : [ "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta", "casa branca", "casa preta" ]
 		}
 
 		expect(casasToString(tabuleiro.casas())).toEqual(tabuleiroEsperado);

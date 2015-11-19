@@ -18,7 +18,7 @@ function Casa (coluna, linha) {
 	}
 
 	function classeCasa() {
-		return "casa-" + corPelaPosicao();
+		return "casa " + corPelaPosicao();
 	}
 
 	function classePeca() {
