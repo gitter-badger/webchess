@@ -5,6 +5,8 @@ function Casa (coluna, linha) {
 
 	var peca = null;
 
+	this.nome = coluna + "" + linha
+
 	this.classe = function () {
 		var classe = [];
 		classe.push(classeCasa());
@@ -15,6 +17,12 @@ function Casa (coluna, linha) {
 
 	this.peca = function (novaPeca) {
 		peca = novaPeca;
+	}
+
+	this.toDiv = function () {
+		var div = document.createElement("div");
+		div.setAttribute("class", this.classe());
+		return div;
 	}
 
 	function classeCasa() {
@@ -39,11 +47,11 @@ function Casa (coluna, linha) {
 		return PRETA;
 	}
 
-	function isLinhaPar(){
-		return linha % 2 === 0;
+	function isColunaPar(){
+		return coluna % 2 === 0;
 	}
 
-	function isColunaPar(){
-		return coluna.charCodeAt(0) % 2 === 0;
+	function isLinhaPar(){
+		return linha.charCodeAt(0) % 2 === 0;
 	}
 }

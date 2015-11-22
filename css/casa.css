@@ -2,19 +2,40 @@
 	clear: both;
 }
 
-.coluna div {
-	float: left;
-}
-
 .casa {
+	float: left;
 	width: 100px;
 	height: 100px;
 }
 
 .preta {
-	background-color: #000000;
+	background-color: #505050;
 }
 
 .branca {
-	background-color: #FFFFFF;
+	background-color: #E8E8E8;
+}
+
+.peao-branco:after {
+	font-size: 105px;
+	color: #FFFFFF;
+	content: "♟";
+}
+
+.peao-preto:after {
+	font-size: 105px;
+	color: #282828;
+	content: "♟";
+}
+
+.torre-branco:after {
+	font-size: 105px;
+	color: #FFFFFF;
+	content: "♜";
+}
+
+.torre-preto:after {
+	font-size: 105px;
+	color: #282828;
+	content: "♜";
 }

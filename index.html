@@ -1,37 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html ng-app="tabuleiro" lang="pt-BR">
 <head>
 	<meta charset="UTF-8">
 	<title>Web chess</title>
 	<link rel="stylesheet" href="css/casa.css">
-	<script>
-		window.onloads = function () {
-			var tabuleiro = new Tabuleiro();
-			var casas = tabuleiro.casas();
-
-			var divTabuleiro = document.getElementById("tabuleiro");
-			var divCasa = document.createElement("div");
-			divTabuleiro.appendChild(divCasa);
-
-			divCasa.appendChild(document.createTextNode("lol"));
-			divCasa.setAttribute("class", "casa-branca");
-
-			for (var coluna in casas) {
-				for (var linha in casas[coluna]) {
-					linhas.push(casas[coluna][linha].classe());
-				}
-
-					
-				casasString[coluna] = linhas;
-
-				var divCasa = document.createElement("div");
-			divTabuleiro.appendChild(divCasa);
-			}
-			return casasString;			
-		}	
-	</script>
+	<script src="lib/angular/angular.js"></script>
+	<script src="src/peca.js"></script>
+	<script src="src/casa.js"></script>
+	<script src="src/tabuleiro.js"></script>
+	<script src="src/tabuleiroController.js"></script>
 </head>
-<body>
-	<div class="tabuleiro"></div>
+<body ng-controller="tabuleiroController">
+	<div ng-repeat="(key, value) in tabuleiro.casas()" class="coluna">
+		<div>{{key}}</div>
+	</div>
 </body>
 </html>
