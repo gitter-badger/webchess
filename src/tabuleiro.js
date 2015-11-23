@@ -1,28 +1,24 @@
 function Tabuleiro () {
 
-	var tabuleiro = {
-		"8" : linhasDaColuna("8"),
-		"7" : linhasDaColuna("7"),
-		"6" : linhasDaColuna("6"),
-		"5" : linhasDaColuna("5"),
-		"4" : linhasDaColuna("4"),
-		"3" : linhasDaColuna("3"),
-		"2" : linhasDaColuna("2"),
-		"1" : linhasDaColuna("1")
-	}
+	var colunas = ["8", "7", "6", "5", "4", "3", "2", "1"];
+	var linhas = ["A", "B", "C", "D", "E", "F", "G", "H"];
+	var tabuleiro = criarTabuleiro();
 
-	function linhasDaColuna(coluna) {
-		return {
-			"A" : new Casa(coluna, "A"),
-			"B" : new Casa(coluna, "B"),
-			"C" : new Casa(coluna, "C"),
-			"D" : new Casa(coluna, "D"),
-			"E" : new Casa(coluna, "E"),
-			"F" : new Casa(coluna, "F"),
-			"G" : new Casa(coluna, "G"),
-			"H" : new Casa(coluna, "H")
-		}
-	}
+	function criarTabuleiro() {
+		var tabuleiro = {};
+		colunas.forEach(function (coluna) {
+			tabuleiro[coluna] = criarLinhas(coluna);
+		});
+		return tabuleiro;
+	};
+
+	function criarLinhas(coluna) {
+		var casas = {};
+		linhas.forEach(function (linha) {
+			casas[linha] = new Casa(coluna, linha);
+		});
+		return casas;
+	};
 
 	this.casas = function () {
 		return tabuleiro;
@@ -30,5 +26,9 @@ function Tabuleiro () {
 
 	this.inserirPeca = function (peca, coluna, linha) {
 		tabuleiro[coluna][linha].peca(peca);
+	};
+
+	this.colunas = function () {
+		return colunas;
 	}
-}
+};

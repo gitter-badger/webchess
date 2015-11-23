@@ -11,8 +11,9 @@
 	<script src="src/tabuleiroController.js"></script>
 </head>
 <body ng-controller="tabuleiroController">
-	<div ng-repeat="(key, value) in tabuleiro.casas()" class="coluna">
-		<div>{{key}}</div>
+	<div ng-repeat="coluna in colunas" class="coluna">
+		<div class="casa">{{coluna}}</div>
+		<div ng-repeat="linha in casas[coluna]" ng-class="linha.classe()"></div>
 	</div>
 </body>
 </html>
