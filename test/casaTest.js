@@ -10,7 +10,7 @@ describe("Casa Testes", function() {
 		expect(casa.classe()).toEqual("casa-branca");
 	});
 
-	it("cclasse para casa na B1", function() {
+	it("classe para casa na B1", function() {
 		var casa = new Casa("B", 1);
 		expect(casa.classe()).toEqual("casa-branca");
 	});

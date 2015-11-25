@@ -1,27 +1,27 @@
 function Tabuleiro () {
 
 	var tabuleiro = {
-		"A" : linhasDaColuna("A"),
-		"B" : linhasDaColuna("B"),
-		"C" : linhasDaColuna("C"),
-		"D" : linhasDaColuna("D"),
-		"E" : linhasDaColuna("E"),
-		"F" : linhasDaColuna("F"),
-		"G" : linhasDaColuna("G"),
-		"H" : linhasDaColuna("H")
+		"8" : colunasDaLinha(8),
+		"7" : colunasDaLinha(7),
+		"6" : colunasDaLinha(6),
+		"5" : colunasDaLinha(5),
+		"4" : colunasDaLinha(4),
+		"3" : colunasDaLinha(3),
+		"2" : colunasDaLinha(2),
+		"1" : colunasDaLinha(1)
 	}
 
-	function linhasDaColuna(coluna) {
-		return [
-			new Casa(coluna, 1),
-			new Casa(coluna, 2),
-			new Casa(coluna, 3),
-			new Casa(coluna, 4),
-			new Casa(coluna, 5),
-			new Casa(coluna, 6),
-			new Casa(coluna, 7),
-			new Casa(coluna, 8)
-		];
+	function colunasDaLinha(linha) {
+		return {
+			"A": new Casa("A", linha),
+			"B": new Casa("B", linha),
+			"C": new Casa("C", linha),
+			"D": new Casa("D", linha),
+			"E": new Casa("E", linha),
+			"F": new Casa("F", linha),
+			"G": new Casa("G", linha),
+			"H": new Casa("H", linha)
+		};
 	}
 
 	this.casas = function () {
