@@ -29,6 +29,6 @@ function Tabuleiro () {
 	}
 
 	this.inserirPeca = function (peca, linha, coluna) {
-		tabuleiro[linha][coluna-1].peca(peca);
+		tabuleiro[linha][coluna].peca(peca);
 	}
 }

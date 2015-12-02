@@ -23,16 +23,16 @@ describe("Casa Testes", function() {
 	it("classe para casa na A2 com peão branco", function() {
 		var casa = new Casa("A", 2);
 
-		casa.peca(new Peao("branco"));
+		casa.peca(new Peca("peao", "branca"));
 
-		expect(casa.classe()).toEqual("casa-branca peao-branco");
+		expect(casa.classe()).toEqual("casa-branca peao-branca");
 	});
 
 	it("classe para casa na A2 com peão preto", function() {
 		var casa = new Casa("A", 2);
 
-		casa.peca(new Peao("preto"));
+		casa.peca(new Peca("peao", "preta"));
 
-		expect(casa.classe()).toEqual("casa-branca peao-preto");
+		expect(casa.classe()).toEqual("casa-branca peao-preta");
 	});	
 });
