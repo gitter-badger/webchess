@@ -1,4 +1,4 @@
-describe("Peão Testes", function() {
+describe("Peça Testes", function() {
 
 	it("classe para peão branco", function() {
 		var peao = new Peca("peao", "branca");
